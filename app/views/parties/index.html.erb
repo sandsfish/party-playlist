@@ -1,0 +1,20 @@
+<% title "Parties" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Host</th>
+    <th>Party Date</th>
+  </tr>
+  <% for party in @parties %>
+    <tr>
+      <td><%= party.name %></td>
+      <td><%= party.host %></td>
+      <td><%= party.party_date %></td>
+      <td><%= link_to "Edit", edit_party_path(party) %></td>
+      <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Party", new_party_path %></p>
